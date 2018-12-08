@@ -9,7 +9,7 @@ package whatsapp;
  *
  * @author wj
  */
-public class Contact implements Person{
+public class Contact extends Person{
     
     
 }

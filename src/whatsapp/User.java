@@ -9,6 +9,6 @@ package whatsapp;
  *
  * @author wj
  */
-public class User implements Person{
+public class User extends Person{
     
 }
