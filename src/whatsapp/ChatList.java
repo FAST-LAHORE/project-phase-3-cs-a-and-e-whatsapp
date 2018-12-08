@@ -9,6 +9,6 @@ package whatsapp;
  *
  * @author wj
  */
-public class VideoCall extends Call{
+public class ChatList {
     
 }
