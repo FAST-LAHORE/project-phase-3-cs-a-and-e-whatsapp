@@ -10,10 +10,6 @@ package whatsapp;
  * @author wj
  */
 public class Contact implements Person{
-    //attributes
-    private int personId;
-    
-    //Constructors
     
     
 }

@@ -9,6 +9,10 @@ package whatsapp;
  *
  * @author wj
  */
-public interface Person {
+public class Person {
+  //attributes
+    private int personId;
     
+    //Constructors
+      
 }
