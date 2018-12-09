@@ -10,5 +10,7 @@ package whatsapp;
  * @author wj
  */
 public class VideoCall extends Call{
-    
+    public VideoCall(Person personCalling , Person personToCall ) {
+        super(personCalling, personToCall);
+    }
 }

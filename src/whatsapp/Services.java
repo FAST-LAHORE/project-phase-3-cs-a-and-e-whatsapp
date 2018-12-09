@@ -10,5 +10,31 @@ package whatsapp;
  * @author wj
  */
 public class Services {
+    ChatList serviceUserChats;
+    CallList serviceCallLog;
+    ContactList serviceContactList;
+    
+    
+    Services() {
+        serviceUserChats = new ChatList();
+        serviceCallLog = new CallList();
+        serviceContactList = new ContactList();
+    }
+    int refresh(DatabaseEngine databaseObject , User myself, ContactList contactList ) {
+        try {
+            serviceUserChats.load(databaseObject);
+            serviceCallLog.load(databaseObject);
+        }
+        catch(Exception E){
+            return -1;
+        }
+        return 1;
+    }
+    ChatList getChatList() {
+        return serviceUserChats;
+    }
+    CallList getCallList() {
+        return serviceCallLog;
+    }
     
 }

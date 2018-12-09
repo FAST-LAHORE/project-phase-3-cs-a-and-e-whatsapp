@@ -9,9 +9,6 @@ package whatsapp;
  *
  * @author wj
  */
-public class VoiceCall extends Call{
-    public VoiceCall(Person personCalling , Person personToCall ) {
-        super(personCalling, personToCall);
-    }
+public class Interpreter {
     
 }

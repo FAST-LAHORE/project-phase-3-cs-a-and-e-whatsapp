@@ -114,7 +114,7 @@ public class ChatList {
         return isDeleted;
     }
     //refreshs all chats from dataBase
-    public boolean load(DBEngine myDatabase){
+    public boolean load(DatabaseEngine myDatabase){
         //this.myDatabase.getUpdatedChatList();
         return true;
     }

@@ -10,5 +10,10 @@ package whatsapp;
  * @author wj
  */
 public class CallList {
+    CallList() {
     
+    }
+    void load(DatabaseEngine databaseObject) {
+        
+    }
 }
