@@ -5,6 +5,10 @@
  */
 package whatsapp;
 
+import java.awt.image.BufferedImage;
+import java.io.File;
+import javax.imageio.ImageIO;
+
 /**
  *
  * @author wj
@@ -15,13 +19,23 @@ public class Person {
     private String personName;
     private String personStatus;
     private boolean personOnline ;
+    private BufferedImage userProfilePicture;
+
     
     //Constructors
-    public Person(int pPN, String pN, String pS, boolean pO){
-        this.personPhoneNumber=pPN;
-        this.personName=pN;
-        this.personStatus=pS;
-        this.personOnline=pO;
+    public Person(int pPN, String pN, String personStatus, boolean personOnline,  String userProfilePictureDir)throws java.io.IOException{
+        this.personPhoneNumber=personPhoneNumber;
+        this.personName=personName;
+        this.personStatus=personStatus;
+        this.personOnline=personOnline;
+        this.userProfilePicture = ImageIO.read(new File(userProfilePictureDir + ".png"));
+    }
+    public Person(int pPN, String pN, String personStatus, boolean personOnline,  BufferedImage userProfilePicture)throws java.io.IOException{
+        this.personPhoneNumber=personPhoneNumber;
+        this.personName=personName;
+        this.personStatus=personStatus;
+        this.personOnline=personOnline;
+        this.userProfilePicture = ImageIO.read(new File(userProfilePicture + ".png"));
     }
     //Getters
     
@@ -34,7 +48,18 @@ public class Person {
     String getStaus(){
         return this.personStatus;
     }
-    //
+    BufferedImage getProfilePicture(){
+        return this.userProfilePicture;
+    }
+    //Setters
+    public void setPhoneNumber(int personPhoneNumber){
+        this.personPhoneNumber=personPhoneNumber;
+    }
+    public void setName(String personName){
+        this.personName=personName;
+    }
+    public void setStatus(String personStatus){
+        this.personStatus=personStatus;
+    }  
     
-      
 }

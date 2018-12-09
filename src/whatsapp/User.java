@@ -5,6 +5,11 @@
  */
 package whatsapp;
 
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
+import javax.imageio.ImageIO;
+
 /**
  *
  * @author wj
@@ -13,10 +18,17 @@ public class User extends Person{
     
     //Attributes
     
-    
     //Constructors
-    public User(int pPN, String pN, String pS,boolean pO){
-        super(pPN,pN,pS,pO);
-    }
     
+    public User(int personPhoneNumber, String personName, String personStatus,boolean personOnline, String userProfilePicDir)throws java.io.IOException{
+        super(personPhoneNumber,personName,personStatus,personOnline,userProfilePicDir);
+        
+    }
+    //Functions
+    void changeStatus(String personStatus){
+        super.setStatus(personStatus);
+    }
+    void changeName(String personName){
+        super.setName(personName);
+    }
 }

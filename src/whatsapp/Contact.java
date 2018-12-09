@@ -5,6 +5,8 @@
  */
 package whatsapp;
 
+import java.awt.image.BufferedImage;
+
 /**
  *
  * @author wj
@@ -12,8 +14,7 @@ package whatsapp;
 public class Contact extends Person{
     
     //Constructors
-    public Contact(int pPN, String pN, String pS,boolean pO){
-        super(pPN,pN,pS,pO);
+    public Contact(int personPhoneNumber, String personName, String personStatus,boolean personOnline, BufferedImage userProfilePicture)throws java.io.IOException{
+        super(personPhoneNumber,personName,personStatus,personOnline,userProfilePicture);   
     }
-    //Getters
 }
