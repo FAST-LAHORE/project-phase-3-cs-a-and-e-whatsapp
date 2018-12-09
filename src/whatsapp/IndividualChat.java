@@ -11,16 +11,15 @@ import java.util.ArrayList;
  *
  * @author wj
  */
-public class IndividualChat implements Chat {
+public class IndividualChat extends Chat {
     private Person IndividualChatPerson;
+    
     public IndividualChat(Person toContact){
+        super();
         IndividualChatPerson = toContact;
     } 
-    public ArrayList<Person> getPersonsInGroup(){
-        Person toAdd = IndividualChatPerson;
-        ArrayList<Person> array = null;
-        array.add(toAdd);
-        return array;
+    public Person getPerson(){
+        return this.IndividualChatPerson;
     }
     public String getNameofContact(){
         return IndividualChatPerson.getName();

@@ -11,7 +11,8 @@ import java.util.ArrayList;
  *
  * @author wj
  */
-public interface Chat {
-    public String getNameofContact();
+public class Chat {
+    public Chat(){
     
+    }
 }

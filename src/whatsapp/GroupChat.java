@@ -11,19 +11,32 @@ import java.util.ArrayList;
  *
  * @author wj
  */
-public class GroupChat implements Chat{
+public class GroupChat extends Chat{
+    private int groupID;
     private ArrayList<Person> groupChatGroupMembers;
     //constructor
-    GroupChat(){
-        
+    public GroupChat(int groupIdToAssign){
+        super();
+        this.groupID = groupIdToAssign;
+        this.groupChatGroupMembers = new ArrayList<Person>();
     }
-    //@override
-    public String getNameofContact(){
-        
-        return null;
+    public GroupChat(int groupIdToAssign,ArrayList<Person> personsToAdd){
+        super();
+        this.groupID = groupIdToAssign;
+        this.groupChatGroupMembers = new ArrayList<Person>();
+        this.groupChatGroupMembers.addAll(personsToAdd);
+    }
+    public int getGroupID(){
+        return groupID;
+    }
+    public boolean addMemberInGroup(Person personToAdd){
+        boolean toReturn = false;
+        if (groupChatGroupMembers.add(personToAdd)){
+            toReturn = true;
+        }
+        return toReturn;
     }
     public ArrayList<Person> getPersonsInGroup(){
-    
-        return null;
+        return this.groupChatGroupMembers;
     }
 }
