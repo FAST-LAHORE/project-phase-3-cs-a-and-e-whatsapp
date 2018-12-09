@@ -59,7 +59,7 @@ public class SettingProfileInfo extends javax.swing.JFrame {
                         .addGap(145, 145, 145)
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(170, 170, 170)
+                        .addGap(164, 164, 164)
                         .addComponent(jButton1)))
                 .addContainerGap(108, Short.MAX_VALUE))
         );
@@ -70,9 +70,9 @@ public class SettingProfileInfo extends javax.swing.JFrame {
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(38, 38, 38)
                 .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 110, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 112, Short.MAX_VALUE)
                 .addComponent(jButton1)
-                .addGap(49, 49, 49))
+                .addGap(47, 47, 47))
         );
 
         pack();
