@@ -20,15 +20,19 @@ public class User extends Person{
     
     //Constructors
     
-    public User(int personPhoneNumber, String personName, String personStatus,boolean personOnline, String userProfilePicDir)throws java.io.IOException{
+    public User(int personPhoneNumber, String personName, Status personStatus,boolean personOnline, BufferedImage userProfilePicDir){
         super(personPhoneNumber,personName,personStatus,personOnline,userProfilePicDir);
         
     }
     //Functions
-    void changeStatus(String personStatus){
+    public void changeStatus(Status personStatus){
         super.setStatus(personStatus);
     }
-    void changeName(String personName){
+    public void changeName(String personName){
         super.setName(personName);
+    }
+    public void changeProfilePicture(String userProfilePictureDir) throws java.io.IOException{
+       
+        super.setProfilePicture(ImageIO.read(new File(userProfilePictureDir))); 
     }
 }

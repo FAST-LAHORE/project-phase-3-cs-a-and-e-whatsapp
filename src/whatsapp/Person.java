@@ -17,35 +17,27 @@ public class Person {
   //attributes
     private int personPhoneNumber;
     private String personName;
-    private String personStatus;
+    private Status personStatus;
     private boolean personOnline ;
     private BufferedImage userProfilePicture;
 
     
     //Constructors
-    public Person(int pPN, String pN, String personStatus, boolean personOnline,  String userProfilePictureDir)throws java.io.IOException{
+    public Person(int personPhoneNumber, String personName, Status personStatus, boolean personOnline,  BufferedImage userProfilePicture){
         this.personPhoneNumber=personPhoneNumber;
         this.personName=personName;
         this.personStatus=personStatus;
         this.personOnline=personOnline;
-        this.userProfilePicture = ImageIO.read(new File(userProfilePictureDir + ".png"));
-    }
-    public Person(int pPN, String pN, String personStatus, boolean personOnline,  BufferedImage userProfilePicture)throws java.io.IOException{
-        this.personPhoneNumber=personPhoneNumber;
-        this.personName=personName;
-        this.personStatus=personStatus;
-        this.personOnline=personOnline;
-        this.userProfilePicture = ImageIO.read(new File(userProfilePicture + ".png"));
+        this.userProfilePicture = userProfilePicture;
     }
     //Getters
-    
     int getPhoneNumber(){
         return this.personPhoneNumber;
     }
     String getName(){
         return this.personName;
     }
-    String getStaus(){
+    Status getStaus(){
         return this.personStatus;
     }
     BufferedImage getProfilePicture(){
@@ -58,8 +50,10 @@ public class Person {
     public void setName(String personName){
         this.personName=personName;
     }
-    public void setStatus(String personStatus){
+    public void setStatus(Status personStatus){
         this.personStatus=personStatus;
     }  
-    
+    public void setProfilePicture(BufferedImage newImage){
+        this.userProfilePicture=newImage;
+    }
 }
