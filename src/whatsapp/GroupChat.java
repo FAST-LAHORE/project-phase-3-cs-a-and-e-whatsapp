@@ -5,10 +5,25 @@
  */
 package whatsapp;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author wj
  */
 public class GroupChat implements Chat{
+    private ArrayList<Person> groupChatGroupMembers;
+    //constructor
+    GroupChat(){
+        
+    }
+    //@override
+    public String getNameofContact(){
+        
+        return null;
+    }
+    public ArrayList<Person> getPersonsInGroup(){
     
+        return null;
+    }
 }

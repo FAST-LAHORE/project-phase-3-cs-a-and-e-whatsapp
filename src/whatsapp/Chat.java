@@ -5,10 +5,13 @@
  */
 package whatsapp;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author wj
  */
 public interface Chat {
+    public String getNameofContact();
     
 }
