@@ -11,8 +11,30 @@ package whatsapp;
  */
 public class Person {
   //attributes
-    private int personId;
+    private int personPhoneNumber;
+    private String personName;
+    private String personStatus;
+    private boolean personOnline ;
     
     //Constructors
+    public Person(int pPN, String pN, String pS, boolean pO){
+        this.personPhoneNumber=pPN;
+        this.personName=pN;
+        this.personStatus=pS;
+        this.personOnline=pO;
+    }
+    //Getters
+    
+    int getPhoneNumber(){
+        return this.personPhoneNumber;
+    }
+    String getName(){
+        return this.personName;
+    }
+    String getStaus(){
+        return this.personStatus;
+    }
+    //
+    
       
 }

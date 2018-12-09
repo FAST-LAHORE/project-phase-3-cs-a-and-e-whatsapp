@@ -11,5 +11,9 @@ package whatsapp;
  */
 public class Contact extends Person{
     
-    
+    //Constructors
+    public Contact(int pPN, String pN, String pS,boolean pO){
+        super(pPN,pN,pS,pO);
+    }
+    //Getters
 }

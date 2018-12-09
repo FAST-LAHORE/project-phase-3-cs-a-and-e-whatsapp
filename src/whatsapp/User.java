@@ -11,4 +11,12 @@ package whatsapp;
  */
 public class User extends Person{
     
+    //Attributes
+    
+    
+    //Constructors
+    public User(int pPN, String pN, String pS,boolean pO){
+        super(pPN,pN,pS,pO);
+    }
+    
 }
