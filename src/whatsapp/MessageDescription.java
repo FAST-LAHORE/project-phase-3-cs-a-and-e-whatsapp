@@ -5,10 +5,16 @@
  */
 package whatsapp;
 
+import java.util.Date;
 /**
  *
  * @author Mani
  */
 public class MessageDescription {
-    
+    private Message MessageDescriptionMessage;
+    private Date MessageDescriptionTime;
+    public MessageDescription(Message messageToStore,Date timeOfSending){
+        this.MessageDescriptionMessage = messageToStore;
+        this.MessageDescriptionTime = timeOfSending;
+    }
 }

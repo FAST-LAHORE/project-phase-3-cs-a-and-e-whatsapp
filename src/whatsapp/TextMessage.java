@@ -9,6 +9,9 @@ package whatsapp;
  *
  * @author Mani
  */
-public class TextMessage {
-    
+public class TextMessage implements Message {
+    private String textMessageText;
+    public TextMessage(String messageToSend){
+        this.textMessageText = messageToSend;
+    }
 }

@@ -5,10 +5,15 @@
  */
 package whatsapp;
 
+import java.awt.image.BufferedImage;
+
 /**
  *
  * @author Mani
  */
-public class ImageMessage {
-    
+public class ImageMessage implements Message {
+    private BufferedImage ImageMessageImage;
+    public ImageMessage (BufferedImage providedImage){
+        this.ImageMessageImage = providedImage;
+    }
 }

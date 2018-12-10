@@ -5,10 +5,14 @@
  */
 package whatsapp;
 
+import java.applet.AudioClip;
 /**
  *
  * @author Mani
  */
-public class VoiceMessage {
-    
+public class VoiceMessage implements Message {
+    private AudioClip VoiceMessageAudio;
+    public VoiceMessage(AudioClip audio){
+        this.VoiceMessageAudio = audio;
+    }
 }

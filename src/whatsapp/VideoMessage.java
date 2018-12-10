@@ -5,10 +5,15 @@
  */
 package whatsapp;
 
+import java.io.File;
+import oracle.jrockit.jfr.ActiveRecordingEvent;
 /**
  *
  * @author Mani
  */
-public class VideoMessage {
-    
+public class VideoMessage implements Message {
+    private File videoMessageVideo;
+    public VideoMessage(File video){
+        this.videoMessageVideo = video;
+    }
 }
