@@ -21,6 +21,20 @@ public class IndividualChat extends Chat {
     public Person getPerson(){
         return this.IndividualChatPerson;
     }
+    public Person getReceiver(Person whoIsChecking,int messageID){
+        Person toReturn = null;
+        for (int i=0;i< chatConversation.size();i++){
+            if (chatConversation.get(i).getMessageID()==messageID && chatConversation.get(i).getSender().getPhoneNumber()==whoIsChecking.getPhoneNumber()){
+                toReturn = IndividualChatPerson;
+                break;
+            }
+            if (chatConversation.get(i).getMessageID()==messageID && chatConversation.get(i).getSender().getPhoneNumber()==IndividualChatPerson.getPhoneNumber()){
+                toReturn = whoIsChecking;
+                break;
+            }
+        }
+        return toReturn;
+    }
     public String getNameofContact(){
         return IndividualChatPerson.getName();
     }

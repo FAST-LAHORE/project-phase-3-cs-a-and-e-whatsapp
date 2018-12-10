@@ -93,6 +93,16 @@ public class GroupChat extends Chat{
         }
         return toReturn;
     }
+    public ArrayList<Person> getReceivers(int messageID){
+        ArrayList<Person> toReturn = null;
+        for (int i=0;i<chatConversation.size();i++){
+            if(messageID == chatConversation.get(i).getMessageID()){
+                 toReturn = new ArrayList<Person>(groupChatGroupMembers);
+                toReturn.remove(chatConversation.get(i).getSender());
+            }
+        }
+        return toReturn;
+    }
     public ArrayList<Person> getPersonsInGroup(){
         return this.groupChatGroupMembers;
     }
