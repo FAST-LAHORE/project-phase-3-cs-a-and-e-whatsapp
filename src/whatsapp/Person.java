@@ -17,18 +17,18 @@ public class Person {
   //attributes
     private int personPhoneNumber;
     private String personName;
-    private Status personStatus;
+    private String personStatus;
     private boolean personOnline ;
     private BufferedImage userProfilePicture;
 
     
     //Constructors
-    public Person(int personPhoneNumber, String personName, Status personStatus, boolean personOnline,  BufferedImage userProfilePicture){
+    public Person(int personPhoneNumber, String personName, String personStatus,
+                                                            boolean personOnline){
         this.personPhoneNumber=personPhoneNumber;
         this.personName=personName;
         this.personStatus=personStatus;
         this.personOnline=personOnline;
-        this.userProfilePicture = userProfilePicture;
     }
     //Getters
     int getPhoneNumber(){
@@ -37,7 +37,7 @@ public class Person {
     String getName(){
         return this.personName;
     }
-    Status getStaus(){
+    String getStaus(){
         return this.personStatus;
     }
     BufferedImage getProfilePicture(){
@@ -50,7 +50,7 @@ public class Person {
     public void setName(String personName){
         this.personName=personName;
     }
-    public void setStatus(Status personStatus){
+    public void setStatus(String personStatus){
         this.personStatus=personStatus;
     }  
     public void setProfilePicture(BufferedImage newImage){

@@ -15,7 +15,9 @@ public class Whatsapp {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        // TODO Running the main JFrame here
+        // MainPage thePage = new MainPage();
+        
     }
     
 }
