@@ -6,6 +6,7 @@
 package whatsapp;
 
 import java.util.ArrayList;
+import java.util.Date;
 
 /**
  *
@@ -36,6 +37,14 @@ public class GroupChat extends Chat{
     }
     public Person getCreator(){
         return this.groupChatGroupMembers.get(0);
+    }
+    //to get the start time of a group
+    public Date getCreationDate(){
+        Date toReturn = null;
+        if (chatConversation.size()>0){
+            toReturn = chatConversation.get(0).getDate();
+        }
+        return toReturn;
     }
     public boolean isAdminIndex(int index){
         boolean toReturn = false;
