@@ -27,18 +27,23 @@ public class ChatList {
             //Group Chat with this person is not initiated
             toReturn = getChatOfGroup(groupID);
             if (toReturn == null){
-                toReturn = new GroupChat(groupID);
+                toReturn = new GroupChat(groupID,personToAdd);
             }
-            toReturn.addMemberInGroup(personToAdd);
+            else{
+                toReturn.addMemberInGroup(personToAdd);
+            }
         }
         return toReturn;
     }
     //create Group with specified members and groupID
-    public GroupChat createGroup(int groupID,ArrayList<Person> personsToAdd){
+    public GroupChat createGroup(int groupID,Person creator,ArrayList<Person> personsToAdd){
         GroupChat toReturn = null;
         toReturn = this.getChatOfGroup(groupID);
-        if (!(toReturn == null)){
-            toReturn = new GroupChat(groupID,personsToAdd);
+        if (toReturn == null){
+            toReturn = new GroupChat(groupID,creator);
+            for(int i=0;i<personsToAdd.size();i++){
+                addPersonInGroup(personsToAdd.get(i), groupID);
+            }
         }
         return toReturn;
     }
@@ -100,9 +105,8 @@ public class ChatList {
         return toReturn;
     }
     //deletes all messages for a given person
-    public boolean deleteChat(Person personToDelete){
+    public boolean deleteIndividualChat(Person personToDelete){
         boolean isDeleted = false;
-        Chat chatToDelete;
         for (int i=0;i<chatListUserChats.size();i++){
             if(chatListUserChats.get(i).getNameofContact().equals(personToDelete)){
                 if (chatListUserChats.remove(chatListUserChats.get(i))){
@@ -112,6 +116,29 @@ public class ChatList {
             }
         }
         return isDeleted;
+    }
+    //deletes all messages from a group chat
+    public boolean deleteAllMessagesOfGroup(int groupID){
+        boolean toReturn = false ;
+        for (int i=0;i<this.chatListGroupChats.size();i++){
+            if (this.chatListGroupChats.get(i).getGroupID() == groupID){
+                this.chatListGroupChats.remove(i);
+                toReturn = true;
+            }
+        }
+        return toReturn;
+    }
+    //to remove a member from a group
+    public boolean removeMemberFromGroup(Person whoWantsToDelete,Person personToDelete,int groupID){
+        boolean toReturn = false;
+        GroupChat presentChat = this.getChatOfGroup(groupID);
+        if (presentChat.getCreator().getPhoneNumber() == whoWantsToDelete.getPhoneNumber()){
+            if (this.getChatOfPersonInGroup(personToDelete, groupID) != null ){
+                toReturn = presentChat.removeMember(whoWantsToDelete,personToDelete);
+                
+            }
+        }
+        return toReturn; 
     }
     //refreshs all chats from dataBase
     public boolean load(DatabaseEngine myDatabase){
