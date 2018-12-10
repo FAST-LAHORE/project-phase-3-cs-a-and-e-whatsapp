@@ -5,10 +5,19 @@
  */
 package whatsapp;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author wj
  */
 public class ContactList {
+    ArrayList<Contact> contactList;
+    public ContactList() {
+        
+    }
+    public void load(DatabaseEngine databaseObject, Person user) {
+        contactList = databaseObject.getContacts(user.getPhoneNumber());
     
+    } 
 }

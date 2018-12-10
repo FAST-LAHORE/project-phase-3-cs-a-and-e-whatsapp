@@ -6,9 +6,14 @@
 package whatsapp;
 
 /**
+ * This class handles all of the interactions with the server space of our app
+ * All of the transfers of the files between users and the database occur with
+ * this class.
  *
  * @author wj
  */
 public class Server {
-    
+    public Server() {
+        
+    }
 }

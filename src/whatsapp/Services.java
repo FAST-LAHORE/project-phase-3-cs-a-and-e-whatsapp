@@ -24,8 +24,8 @@ public class Services {
         try {
             serviceUserChats.load(databaseObject);
             serviceCallLog.load(databaseObject);
-        }
-        catch(Exception E){
+            serviceContactList.load(databaseObject,myself);
+        } catch(Exception E){
             return -1;
         }
         return 1;

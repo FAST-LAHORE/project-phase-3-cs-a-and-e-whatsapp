@@ -14,7 +14,11 @@ import java.awt.image.BufferedImage;
 public class Contact extends Person{
     
     //Constructors
-    public Contact(int personPhoneNumber, String personName, Status personStatus,boolean personOnline, BufferedImage userProfilePicture)throws java.io.IOException{
-        super(personPhoneNumber,personName,personStatus,personOnline,userProfilePicture);   
+    public Contact(int personPhoneNumber, String personName, String personStatus,
+                    boolean personOnline)
+                        throws java.io.IOException{
+        super(personPhoneNumber,personName,personStatus,personOnline);
     }
+    
+    
 }

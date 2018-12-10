@@ -173,6 +173,68 @@ public class DatabaseEngine {
 //        return result;
 //    } 
 
+    ArrayList<Contact> getContacts(int contactNumber) {
+        ArrayList<Contact> contactList = new ArrayList<Contact>();
+        try {
+            CallableStatement retrieveContacts = connection.prepareCall("{call retrieveContacts(?)}");
+            //retrieveContact.
+            retrieveContacts.setInt(contactNumber, 1);
+            
+            ResultSet results = retrieveContacts.executeQuery();
+            ArrayList<Integer> contactNumberList = new ArrayList<Integer>();
+
+            while (results.next()){
+                java.sql.ResultSetMetaData rsmd = results.getMetaData();
+                int numberOfColumns = rsmd.getColumnCount();
+                for(int columnIndex = 1; columnIndex <= numberOfColumns; columnIndex ++){
+                    contactNumberList.add(Integer.parseInt(results.getObject(columnIndex).toString()));
+                }
+                System.out.println(contactNumberList);
+                
+                for(int i:contactNumberList) {
+                    contactList.add(addAdditionalContactInfo(i));
+                }
+            }
+        } catch(Exception E) {
+            
+        }
+        return contactList;
+    }
+    
+    Contact addAdditionalContactInfo(int contactNumber){
+        Contact contactInfo;
+        try {
+            CallableStatement retrieveContactInfo = connection.prepareCall("{call retrieveContactInfo(?)}");
+            retrieveContactInfo.setInt(contactNumber, 1);
+            /**
+             * registerOutputParameter returns as output the 
+             *  1)  Phone Number
+             *  2)  Name
+             *  3)  Status i.e. Description
+             *  4)  OnlineStatus
+             * 
+             */
+            
+            retrieveContactInfo.registerOutParameter(2, Types.INTEGER);
+            retrieveContactInfo.registerOutParameter(3, Types.VARCHAR);
+            retrieveContactInfo.registerOutParameter(4, Types.BOOLEAN);
+            
+            retrieveContactInfo.executeQuery();
+            
+            contactInfo = new Contact(
+                    contactNumber,
+                    retrieveContactInfo.getString(3), 
+                    retrieveContactInfo.getString(3), 
+                    retrieveContactInfo.getBoolean(4)
+                    
+                );
+            return contactInfo;
+        }
+        catch(Exception E) {
+            return null;
+        }
+    }
+
    
     /**
      * closes the databases
