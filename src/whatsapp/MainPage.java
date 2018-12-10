@@ -27,12 +27,18 @@ public class MainPage extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPopupMenu1 = new javax.swing.JPopupMenu();
+        ChatsMenu = new javax.swing.JPopupMenu();
         NewGroup = new javax.swing.JMenuItem();
         NewBroadcast = new javax.swing.JMenuItem();
         Whatsappweb = new javax.swing.JMenuItem();
         StarredMessages = new javax.swing.JMenuItem();
-        Settings = new javax.swing.JMenuItem();
+        Settingschat = new javax.swing.JMenuItem();
+        StatusMenu = new javax.swing.JPopupMenu();
+        StatusPrivacy = new javax.swing.JMenuItem();
+        SettingsStatus = new javax.swing.JMenuItem();
+        CallsMenu = new javax.swing.JPopupMenu();
+        Clearlog = new javax.swing.JMenuItem();
+        SettingsCall = new javax.swing.JMenuItem();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel1 = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
@@ -55,30 +61,42 @@ public class MainPage extends javax.swing.JFrame {
         jButton7 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
-        jPopupMenu1.addPopupMenuListener(new javax.swing.event.PopupMenuListener() {
+        ChatsMenu.addPopupMenuListener(new javax.swing.event.PopupMenuListener() {
             public void popupMenuCanceled(javax.swing.event.PopupMenuEvent evt) {
             }
             public void popupMenuWillBecomeInvisible(javax.swing.event.PopupMenuEvent evt) {
             }
             public void popupMenuWillBecomeVisible(javax.swing.event.PopupMenuEvent evt) {
-                jPopupMenu1PopupMenuWillBecomeVisible(evt);
+                ChatsMenuPopupMenuWillBecomeVisible(evt);
             }
         });
 
         NewGroup.setText("jMenuItem1");
-        jPopupMenu1.add(NewGroup);
+        ChatsMenu.add(NewGroup);
 
         NewBroadcast.setText("jMenuItem2");
-        jPopupMenu1.add(NewBroadcast);
+        ChatsMenu.add(NewBroadcast);
 
         Whatsappweb.setText("jMenuItem3");
-        jPopupMenu1.add(Whatsappweb);
+        ChatsMenu.add(Whatsappweb);
 
         StarredMessages.setText("jMenuItem4");
-        jPopupMenu1.add(StarredMessages);
+        ChatsMenu.add(StarredMessages);
 
-        Settings.setText("jMenuItem5");
-        jPopupMenu1.add(Settings);
+        Settingschat.setText("jMenuItem5");
+        ChatsMenu.add(Settingschat);
+
+        StatusPrivacy.setText("jMenuItem1");
+        StatusMenu.add(StatusPrivacy);
+
+        SettingsStatus.setText("jMenuItem2");
+        StatusMenu.add(SettingsStatus);
+
+        Clearlog.setText("jMenuItem1");
+        CallsMenu.add(Clearlog);
+
+        SettingsCall.setText("jMenuItem2");
+        CallsMenu.add(SettingsCall);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -125,7 +143,7 @@ public class MainPage extends javax.swing.JFrame {
                     .addComponent(jButton8))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jButton4)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 265, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 225, Short.MAX_VALUE)
                 .addComponent(jButton1)
                 .addContainerGap())
         );
@@ -192,7 +210,7 @@ public class MainPage extends javax.swing.JFrame {
                     .addComponent(jButton6))
                 .addGap(18, 18, 18)
                 .addComponent(jLabel3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 124, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 84, Short.MAX_VALUE)
                 .addComponent(jLabel4)
                 .addGap(111, 111, 111))
         );
@@ -241,7 +259,7 @@ public class MainPage extends javax.swing.JFrame {
                     .addComponent(jButton7))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButton5)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 269, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 229, Short.MAX_VALUE)
                 .addComponent(jButton3)
                 .addContainerGap())
         );
@@ -282,9 +300,9 @@ public class MainPage extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField2ActionPerformed
 
-    private void jPopupMenu1PopupMenuWillBecomeVisible(javax.swing.event.PopupMenuEvent evt) {//GEN-FIRST:event_jPopupMenu1PopupMenuWillBecomeVisible
+    private void ChatsMenuPopupMenuWillBecomeVisible(javax.swing.event.PopupMenuEvent evt) {//GEN-FIRST:event_ChatsMenuPopupMenuWillBecomeVisible
         // TODO add your handling code here:
-    }//GEN-LAST:event_jPopupMenu1PopupMenuWillBecomeVisible
+    }//GEN-LAST:event_ChatsMenuPopupMenuWillBecomeVisible
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
@@ -326,10 +344,17 @@ public class MainPage extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPopupMenu CallsMenu;
+    private javax.swing.JPopupMenu ChatsMenu;
+    private javax.swing.JMenuItem Clearlog;
     private javax.swing.JMenuItem NewBroadcast;
     private javax.swing.JMenuItem NewGroup;
-    private javax.swing.JMenuItem Settings;
+    private javax.swing.JMenuItem SettingsCall;
+    private javax.swing.JMenuItem SettingsStatus;
+    private javax.swing.JMenuItem Settingschat;
     private javax.swing.JMenuItem StarredMessages;
+    private javax.swing.JPopupMenu StatusMenu;
+    private javax.swing.JMenuItem StatusPrivacy;
     private javax.swing.JMenuItem Whatsappweb;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
@@ -348,7 +373,6 @@ public class MainPage extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JPopupMenu jPopupMenu1;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
