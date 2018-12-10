@@ -13,8 +13,18 @@ import java.util.Date;
 public class MessageDescription {
     private Message MessageDescriptionMessage;
     private Date MessageDescriptionTime;
-    public MessageDescription(Message messageToStore,Date timeOfSending){
+    private int MessageDescriptionID;
+    private Person MessageDescriptionSender;
+    public MessageDescription(Person sender,Message messageToStore,Date timeOfSending,int id){
         this.MessageDescriptionMessage = messageToStore;
         this.MessageDescriptionTime = timeOfSending;
+        this.MessageDescriptionID = id;
+        this.MessageDescriptionSender = sender;
+    }
+    public Person getSender(){
+        return this.MessageDescriptionSender;
+    }
+    public int getMessageID(){
+        return this.MessageDescriptionID;
     }
 }
