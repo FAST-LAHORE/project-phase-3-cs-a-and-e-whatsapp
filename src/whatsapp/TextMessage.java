@@ -14,4 +14,7 @@ public class TextMessage implements Message {
     public TextMessage(String messageToSend){
         this.textMessageText = messageToSend;
     }
+    public String getMessage(){
+        return textMessageText;
+    }
 }
