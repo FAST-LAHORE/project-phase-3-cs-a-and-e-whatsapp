@@ -5,15 +5,10 @@
  */
 package whatsapp;
 
-import java.util.ArrayList;
-
 /**
  *
- * @author wj
+ * @author Mani
  */
-public class Chat {
-    private ArrayList<MessageDescription> chatConversation;
-    public Chat(){
-        this.chatConversation = new ArrayList<>();
-    }
+public class ImageMessage {
+    
 }

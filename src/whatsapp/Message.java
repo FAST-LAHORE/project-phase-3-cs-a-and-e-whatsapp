@@ -10,5 +10,4 @@ package whatsapp;
  * @author wj
  */
 public interface Message {
-    
 }
