@@ -22,11 +22,21 @@ package Gui;
  */
 public class SettingProfile extends javax.swing.JPanel {
 
+    
+    Register registerme;
+    private MainWhatsapp prtPg=null;
     /**
      * Creates new form SettingProfile
      */
-    public SettingProfile() {
+    public SettingProfile(MainWhatsapp a) {
         initComponents();
+        registerme = new Register(a);
+        prtPg=a;
+        prtPg.MainFramePanel.add(registerme);
+        registerme.setVisible(false);
+    
+    
+    
     }
 
     /**
@@ -52,6 +62,11 @@ public class SettingProfile extends javax.swing.JPanel {
         });
 
         jButton1.setText("NEXT");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jLabel1.setFont(new java.awt.Font("Segoe UI Symbol", 1, 15)); // NOI18N
         jLabel1.setText("Profile Info");
@@ -80,7 +95,7 @@ public class SettingProfile extends javax.swing.JPanel {
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(38, 38, 38)
                 .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 112, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 230, Short.MAX_VALUE)
                 .addComponent(jButton1)
                 .addGap(47, 47, 47))
         );
@@ -89,6 +104,13 @@ public class SettingProfile extends javax.swing.JPanel {
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField1ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        registerme.setVisible(true);
+        setVisible(false);    
+
+// TODO add your handling code here:
+    }//GEN-LAST:event_jButton1ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

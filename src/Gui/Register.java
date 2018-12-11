@@ -22,11 +22,18 @@ package Gui;
  */
 public class Register extends javax.swing.JPanel {
 
+    MainPage mymainpage;
+    private MainWhatsapp prtPg=null;
     /**
      * Creates new form Register
      */
-    public Register() {
+    public Register(MainWhatsapp a) {
         initComponents();
+        mymainpage = new MainPage(a);
+        prtPg=a;
+        prtPg.MainFramePanel.add(mymainpage);
+        mymainpage.setVisible(false);
+    
     }
 
     /**
@@ -123,7 +130,9 @@ public class Register extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
+            mymainpage.setVisible(true);
+            setVisible(false);
+// TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
