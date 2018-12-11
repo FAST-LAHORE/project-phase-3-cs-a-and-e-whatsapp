@@ -23,16 +23,13 @@ import java.awt.GridBagLayout;
  */
 public class MainWhatsapp extends javax.swing.JFrame {
     
+    private static MainWhatsapp obj=null;
     StartPage start_page;
     
     GridBagLayout layout = new GridBagLayout();
     public MainWhatsapp() {
         initComponents();
-        
-        start_page=new StartPage(this);
-        
-        
-        
+        start_page=new StartPage();
         MainFramePanel.setLayout(layout);
         GridBagConstraints c = new GridBagConstraints();
         c.gridx = 0;
@@ -41,7 +38,13 @@ public class MainWhatsapp extends javax.swing.JFrame {
         start_page.setVisible(true);
        
     }
-
+    public static MainWhatsapp getInstance() 
+    { 
+        if (obj==null) 
+            obj = new MainWhatsapp(); 
+        return obj;
+    }
+    
     /**
      * This method is called from within the constructor to
      * initialize the form.
@@ -120,6 +123,7 @@ public class MainWhatsapp extends javax.swing.JFrame {
          */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
+                
                 new MainWhatsapp().setVisible(true);
             }
         });

@@ -23,14 +23,13 @@ package Gui;
 public class Register extends javax.swing.JPanel {
 
     MainPage mymainpage;
-    private MainWhatsapp prtPg=null;
+    private MainWhatsapp prtPg=MainWhatsapp.getInstance();
     /**
      * Creates new form Register
      */
-    public Register(MainWhatsapp a) {
+    public Register() {
         initComponents();
-        mymainpage = new MainPage(a);
-        prtPg=a;
+        mymainpage = new MainPage();
         prtPg.MainFramePanel.add(mymainpage);
         mymainpage.setVisible(false);
     

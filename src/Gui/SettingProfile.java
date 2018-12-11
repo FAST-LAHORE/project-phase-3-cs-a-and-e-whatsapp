@@ -24,14 +24,13 @@ public class SettingProfile extends javax.swing.JPanel {
 
     
     Register registerme;
-    private MainWhatsapp prtPg=null;
+    private MainWhatsapp prtPg=MainWhatsapp.getInstance();
     /**
      * Creates new form SettingProfile
      */
-    public SettingProfile(MainWhatsapp a) {
+    public SettingProfile() {
         initComponents();
-        registerme = new Register(a);
-        prtPg=a;
+        registerme = new Register();
         prtPg.MainFramePanel.add(registerme);
         registerme.setVisible(false);
     

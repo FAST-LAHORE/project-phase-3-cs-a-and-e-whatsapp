@@ -15,22 +15,21 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 package Gui;
-
 /**
  *
  * @author yamee
  */
 public class StartPage extends javax.swing.JPanel {
     SettingProfile myprofile;
-    private MainWhatsapp prtPg=null;
+    private MainWhatsapp prtPg;
     
-    public StartPage(MainWhatsapp a) {
+    public StartPage() {
         initComponents();
-        myprofile = new SettingProfile(a);
-        prtPg=a;
-        prtPg.MainFramePanel.add(myprofile);
-        myprofile.setVisible(false);
-    
+        //prtPg=MainWhatsapp.getInstance();       
+        //myprofile = new SettingProfile();
+        //prtPg.MainFramePanel.add(myprofile);
+        //myprofile.setVisible(false);
+        
     
     }
 

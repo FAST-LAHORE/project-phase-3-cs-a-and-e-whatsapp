@@ -24,15 +24,11 @@ public class MainPage extends javax.swing.JPanel {
     
     
     SettingPage settingspage;
-    private MainWhatsapp prtPg=null;
+    private MainWhatsapp prtPg=MainWhatsapp.getInstance();
     
-    /**
-     * Creates new form MainPage
-     */
-    public MainPage(MainWhatsapp a) {
+    public MainPage() {
         initComponents();
         settingspage = new SettingPage();
-        prtPg=a;
         prtPg.MainFramePanel.add(settingspage);
         settingspage.setVisible(false);
     }
