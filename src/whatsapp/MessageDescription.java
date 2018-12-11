@@ -27,4 +27,7 @@ public class MessageDescription {
     public int getMessageID(){
         return this.MessageDescriptionID;
     }
+    public Date getDate(){
+        return this.MessageDescriptionTime;
+    }
 }
