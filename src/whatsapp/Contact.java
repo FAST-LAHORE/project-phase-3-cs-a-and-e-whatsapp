@@ -4,6 +4,9 @@
  * and open the template in the editor.
  */
 package whatsapp;
+
+import java.awt.image.BufferedImage;
+
 /**
  *
  * @author wj
@@ -11,7 +14,9 @@ package whatsapp;
 public class Contact extends Person{
     
     //Constructors
-    public Contact(int personPhoneNumber, String personName, Status personStatus, boolean personOnline){
+    public Contact(int personPhoneNumber, String personName, String personStatus,
+                    boolean personOnline)
+                        throws java.io.IOException{
         super(personPhoneNumber,personName,personStatus,personOnline);
     }
     

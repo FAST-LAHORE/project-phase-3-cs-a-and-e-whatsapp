@@ -20,12 +20,12 @@ public class User extends Person{
     
     //Constructors
     
-    public User(int personPhoneNumber, String personName, Status personStatus,boolean personOnline){
+    public User(int personPhoneNumber, String personName, String personStatus,boolean personOnline){
         super(personPhoneNumber,personName,personStatus,personOnline);
         
     }
     //Functions
-    public void changeStatus(Status personStatus){
+    public void changeStatus(String personStatus){
         super.setStatus(personStatus);
     }
     public void changeName(String personName){
