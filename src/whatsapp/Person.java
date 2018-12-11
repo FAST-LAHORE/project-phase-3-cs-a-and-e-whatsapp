@@ -15,7 +15,7 @@ import javax.imageio.ImageIO;
  */
 public class Person {
   //attributes
-    private int personPhoneNumber;
+    private String personPhoneNumber;
     private String personName;
     private String personStatus;
     private boolean personOnline ;
@@ -23,7 +23,7 @@ public class Person {
 
     
     //Constructors
-    public Person(int personPhoneNumber, String personName, String personStatus,
+    public Person(String personPhoneNumber, String personName, String personStatus,
                                                             boolean personOnline){
         this.personPhoneNumber=personPhoneNumber;
         this.personName=personName;
@@ -31,7 +31,7 @@ public class Person {
         this.personOnline=personOnline;
     }
     //Getters
-    int getPhoneNumber(){
+    String getPhoneNumber(){
         return this.personPhoneNumber;
     }
     String getName(){
@@ -44,7 +44,7 @@ public class Person {
         return this.userProfilePicture;
     }
     //Setters
-    public void setPhoneNumber(int personPhoneNumber){
+    public void setPhoneNumber(String personPhoneNumber){
         this.personPhoneNumber=personPhoneNumber;
     }
     public void setName(String personName){

@@ -20,7 +20,7 @@ public class User extends Person{
     
     //Constructors
     
-    public User(int personPhoneNumber, String personName, String personStatus,boolean personOnline){
+    public User(String personPhoneNumber, String personName, String personStatus,boolean personOnline){
         super(personPhoneNumber,personName,personStatus,personOnline);
         
     }
