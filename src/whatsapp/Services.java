@@ -22,7 +22,7 @@ public class Services {
     }
     int refresh(DatabaseEngine databaseObject , User myself, ContactList contactList ) {
         try {
-            serviceUserChats.load(databaseObject);
+            serviceUserChats.load(databaseObject, myself);
             serviceCallLog.load(databaseObject);
             serviceContactList.load(databaseObject,myself);
         } catch(Exception E){

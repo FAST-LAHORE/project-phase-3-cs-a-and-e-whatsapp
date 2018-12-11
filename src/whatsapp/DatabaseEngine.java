@@ -173,7 +173,7 @@ public class DatabaseEngine {
 //        return result;
 //    } 
 
-    ArrayList<Contact> getContacts(int contactNumber) {
+    ArrayList<Contact> getContacts(String contactNumber) {
         ArrayList<Contact> contactList = new ArrayList<Contact>();
         try {
             CallableStatement retrieveContacts = connection.prepareCall("{call retrieveContacts(?)}");
@@ -181,17 +181,17 @@ public class DatabaseEngine {
             retrieveContacts.setInt(contactNumber, 1);
             
             ResultSet results = retrieveContacts.executeQuery();
-            ArrayList<Integer> contactNumberList = new ArrayList<Integer>();
+            ArrayList<String> contactNumberList = new ArrayList<String>();
 
             while (results.next()){
                 java.sql.ResultSetMetaData rsmd = results.getMetaData();
                 int numberOfColumns = rsmd.getColumnCount();
                 for(int columnIndex = 1; columnIndex <= numberOfColumns; columnIndex ++){
-                    contactNumberList.add(Integer.parseInt(results.getObject(columnIndex).toString()));
+                    contactNumberList.add((results.getObject(columnIndex).toString()));
                 }
                 System.out.println(contactNumberList);
                 
-                for(int i:contactNumberList) {
+                for(String i:contactNumberList) {
                     contactList.add(addAdditionalContactInfo(i));
                 }
             }
@@ -201,11 +201,11 @@ public class DatabaseEngine {
         return contactList;
     }
     
-    Contact addAdditionalContactInfo(int contactNumber){
+    Contact addAdditionalContactInfo(String contactNumber){
         Contact contactInfo;
         try {
-            CallableStatement retrieveContactInfo = connection.prepareCall("{call retrieveContactInfo(?)}");
-            retrieveContactInfo.setInt(contactNumber, 1);
+            CallableStatement retrieveContactInfo = connection.prepareCall("{call retrieveContact(?)}");
+            retrieveContactInfo.setString(1, contactNumber);
             /**
              * registerOutputParameter returns as output the 
              *  1)  Phone Number
@@ -235,7 +235,20 @@ public class DatabaseEngine {
         }
     }
 
-   
+    /**
+     * getUpdatedChatList
+     */
+    
+    public ArrayList<IndividualChat> getUpdatedIndividualChatList(String i) {
+        // TODO  implement this function
+        
+        return null;
+    }
+    public ArrayList<GroupChat> getUpdatedGroupChatList(String i) {
+        // TODO  implement this function
+        return null;
+    }    
+    
     /**
      * closes the databases
      */   

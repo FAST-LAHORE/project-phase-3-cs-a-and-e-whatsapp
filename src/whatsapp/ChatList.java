@@ -91,7 +91,7 @@ public class ChatList {
 
         return toReturn;
     }
-        public IndividualChat getChatOfPersonIndividual(Person personToFind){
+         public IndividualChat getChatOfPersonIndividual(Person personToFind){
         IndividualChat toReturn = null;
         boolean personFound = false;
         for(int i=0;i<chatListUserChats.size()&&!personFound;i++){
@@ -141,8 +141,9 @@ public class ChatList {
         return toReturn; 
     }
     //refreshs all chats from dataBase
-    public boolean load(DatabaseEngine myDatabase){
-        //this.myDatabase.getUpdatedChatList();
+    public boolean load(DatabaseEngine databaseObject, Person user) {
+        chatListUserChats = databaseObject.getUpdatedIndividualChatList(user.getPhoneNumber());
+        chatListGroupChats = databaseObject.getUpdatedGroupChatList(user.getPhoneNumber());
         return true;
     }
     

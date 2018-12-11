@@ -17,7 +17,10 @@ public class Whatsapp {
     public static void main(String[] args) {
         // TODO Running the main JFrame here
         // MainPage thePage = new MainPage();
-        
+        DatabaseEngine databaseObject = new DatabaseEngine();
+        ContactList lissss = new ContactList();
+        Person user = new User("03012308193","","",false);
+        lissss.load(databaseObject, user);
     }
     
 }
