@@ -15,7 +15,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 package Gui;
-
+import Gui.MenuCalls.*;
 /**
  *
  * @author yamee
@@ -24,13 +24,18 @@ public class MainPage extends javax.swing.JPanel {
     
     
     SettingPage settingspage;
+    StartNewChat newchat;
     private MainWhatsapp prtPg=MainWhatsapp.getInstance();
     
     public MainPage() {
         initComponents();
         settingspage = new SettingPage(this);
+        newchat= new StartNewChat(this);
         prtPg.MainFramePanel.add(settingspage);
+        prtPg.MainFramePanel.add(newchat);
         settingspage.setVisible(false);
+        newchat.setVisible(false);
+
         //boolean isEnabled(int index)
     
     
@@ -136,6 +141,11 @@ public class MainPage extends javax.swing.JPanel {
 
         StartANewChat.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         StartANewChat.setText("Start A New Chat");
+        StartANewChat.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                StartANewChatActionPerformed(evt);
+            }
+        });
 
         SearchBoxChats.setText("Search Calls");
         SearchBoxChats.addActionListener(new java.awt.event.ActionListener() {
@@ -184,7 +194,7 @@ public class MainPage extends javax.swing.JPanel {
                     .addComponent(SearchChats))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(MenuChats)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 231, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 285, Short.MAX_VALUE)
                 .addComponent(StartANewChat)
                 .addContainerGap())
         );
@@ -256,7 +266,7 @@ public class MainPage extends javax.swing.JPanel {
                         .addComponent(AddStatus, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(RecentUpdates)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 90, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 144, Short.MAX_VALUE)
                         .addComponent(ViewedUpdates)
                         .addGap(111, 111, 111))
                     .addGroup(StatusPanelLayout.createSequentialGroup()
@@ -314,7 +324,7 @@ public class MainPage extends javax.swing.JPanel {
                     .addComponent(SearchCalls))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(MenuCalls)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 235, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 289, Short.MAX_VALUE)
                 .addComponent(MakeaCall)
                 .addContainerGap())
         );
@@ -329,7 +339,7 @@ public class MainPage extends javax.swing.JPanel {
                 .addContainerGap()
                 .addComponent(WhatsAppDisplayMainPage, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addComponent(MainPagePanel)
+            .addComponent(MainPagePanel, javax.swing.GroupLayout.DEFAULT_SIZE, 514, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -390,6 +400,12 @@ public class MainPage extends javax.swing.JPanel {
         setVisible(false);        
 // TODO add your handling code here:
     }//GEN-LAST:event_SettingsCallsActionPerformed
+
+    private void StartANewChatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_StartANewChatActionPerformed
+        newchat.setVisible(true);
+        setVisible(false);
+// TODO add your handling code here:
+    }//GEN-LAST:event_StartANewChatActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

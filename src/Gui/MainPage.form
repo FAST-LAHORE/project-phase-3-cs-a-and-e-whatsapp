@@ -114,7 +114,7 @@
               <Component id="WhatsAppDisplayMainPage" min="-2" pref="124" max="-2" attributes="0"/>
               <EmptySpace max="32767" attributes="0"/>
           </Group>
-          <Component id="MainPagePanel" alignment="0" max="32767" attributes="0"/>
+          <Component id="MainPagePanel" alignment="0" pref="514" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
@@ -181,7 +181,7 @@
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Component id="MenuChats" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="231" max="32767" attributes="0"/>
+                      <EmptySpace pref="285" max="32767" attributes="0"/>
                       <Component id="StartANewChat" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
@@ -196,6 +196,9 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="Start A New Chat"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="StartANewChatActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JTextField" name="SearchBoxChats">
               <Properties>
@@ -279,7 +282,7 @@
                               <Component id="AddStatus" min="-2" pref="40" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Component id="RecentUpdates" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace pref="90" max="32767" attributes="0"/>
+                              <EmptySpace pref="144" max="32767" attributes="0"/>
                               <Component id="ViewedUpdates" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="111" max="-2" attributes="0"/>
                           </Group>
@@ -393,7 +396,7 @@
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="MenuCalls" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="235" max="32767" attributes="0"/>
+                      <EmptySpace pref="289" max="32767" attributes="0"/>
                       <Component id="MakeaCall" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
