@@ -33,7 +33,6 @@ public class DatabaseEngine {
      */
     public DatabaseEngine() {
         connectToDatabase();
-        setUpPreparedSQLStatements();
     }
     
     
@@ -61,124 +60,12 @@ public class DatabaseEngine {
         }
     }
 
-    /**
-     * TODO : Change this !
-     * Template Functions for the queries 
-     * sets the sql statements
-     */
-    public void setUpPreparedSQLStatements() {
-        try {
-            // CHANGE THIS !!
-            selectAllMessages = 
-            connection.prepareStatement( 
-                    "SELECT pass_no, car_no , status , status_code  from Messages WHERE mID = ?" );
-
-           insertNewBoarding = connection.prepareStatement( 
-            "INSERT INTO boardinglog " + 
-            "( pass_no, car_no , status, status_code) " + 
-            "VALUES ( ?, ?, ? , 0)" );
-           
-           deleteAllShoes = connection.prepareStatement(
-            "TRUNCATE table Messages");    
-        }
-        catch( SQLException e ) {
-            e.printStackTrace();
-        }
-    }
-
-    
-    /**
-     * loads the data from the boardinglog table
-     * @param sc
-     * @return 
-     */
-    public ArrayList<Message> getBoardings(int messageID) {
-        ResultSet resultSet = null;
-        ArrayList<Message> results = new ArrayList<Message>();
-        try {
-            selectAllMessages.setInt( 1, messageID);
-            
-            resultSet = selectAllMessages.executeQuery(); 
-
-            int i=0;
-            while(resultSet.next()){
-                String s = resultSet.getString( "pass_no" );
-                int s2 = resultSet.getInt("car_no" );
-                String s3 = resultSet.getString( "status" );
-            //    BoardingQueue bq = null; 
-            //    results[i] = new Passenger(s, bq , "", s3 , s2);
-                i++;
-            }
-        }
-        
-        catch ( SQLException sqlException )  {
-
-        } 
-        finally {
-            try {
-                resultSet.close();
-            } 
-            catch ( SQLException sqlException )  {
-                sqlException.printStackTrace();         
-                close();
-            } 
-        } 
-        return results;
-    } 
-    
-
-
-        /**
-        * adds the boardings to the boarding log table
-        * @param name
-        * @param carNo
-        * @param status
-        * @return 
-        */ 
-//    public int addPassenger( String name, int carNo, String status )
-//    {
-//
-//        int result = 0;
-//
-//        try   {
-//            insertNewBoarding.setString( 1, name );
-//            insertNewBoarding.setInt( 2, carNo);
-//            insertNewBoarding.setString( 3, status  );
-//            result = insertNewBoarding.executeUpdate(); 
-//        } 
-//        catch ( SQLException sqlException ) {
-//         //sqlException.printStackTrace();
-//         System.out.println("Passenger Already Exist");
-//        } 
-//        catch ( Exception dsql ){
-//          //System.out.println("Shoe " + id + " Already Exists - not added" );
-//        }
-//        return result;
-//
-//    } 
-//    /**
-//     * deletes all the data in the boardinglog table
-//     * @return 
-//     */
-//    public int deleteAllBoardings()
-//    {
-//        int result = 0;
-//        try {
-//            result = deleteAllShoes.executeUpdate(); 
-//        } 
-//        catch ( SQLException sqlException ) {
-//            sqlException.printStackTrace();
-//            close();
-//        }  
-//        return result;
-//    } 
-
     ArrayList<Contact> getContacts(String contactNumber) {
         ArrayList<Contact> contactList = new ArrayList<Contact>();
         try {
             CallableStatement retrieveContacts = connection.prepareCall("{call retrieveContacts(?)}");
             //retrieveContact.
-            retrieveContacts.setInt(contactNumber, 1);
+            retrieveContacts.setString(1,contactNumber);
             
             ResultSet results = retrieveContacts.executeQuery();
             ArrayList<String> contactNumberList = new ArrayList<String>();
@@ -187,7 +74,7 @@ public class DatabaseEngine {
                 java.sql.ResultSetMetaData rsmd = results.getMetaData();
                 int numberOfColumns = rsmd.getColumnCount();
                 for(int columnIndex = 1; columnIndex <= numberOfColumns; columnIndex ++){
-                    contactNumberList.add((results.getObject(columnIndex).toString()));
+                    contactNumberList.add((results.getString(columnIndex)));
                 }
                 System.out.println(contactNumberList);
                 
@@ -195,8 +82,8 @@ public class DatabaseEngine {
                     contactList.add(addAdditionalContactInfo(i));
                 }
             }
-        } catch(Exception E) {
-            
+        } catch(SQLException E) {
+            E.printStackTrace();
         }
         return contactList;
     }
@@ -204,7 +91,7 @@ public class DatabaseEngine {
     Contact addAdditionalContactInfo(String contactNumber){
         Contact contactInfo;
         try {
-            CallableStatement retrieveContactInfo = connection.prepareCall("{call retrieveContact(?)}");
+            CallableStatement retrieveContactInfo = connection.prepareCall("{call getContactInfo(?)}");
             retrieveContactInfo.setString(1, contactNumber);
             /**
              * registerOutputParameter returns as output the 
@@ -215,7 +102,7 @@ public class DatabaseEngine {
              * 
              */
             
-            retrieveContactInfo.registerOutParameter(2, Types.INTEGER);
+            retrieveContactInfo.registerOutParameter(2, Types.VARCHAR);
             retrieveContactInfo.registerOutParameter(3, Types.VARCHAR);
             retrieveContactInfo.registerOutParameter(4, Types.BOOLEAN);
             
@@ -223,11 +110,11 @@ public class DatabaseEngine {
             
             contactInfo = new Contact(
                     contactNumber,
-                    retrieveContactInfo.getString(3), 
+                    retrieveContactInfo.getString(2), 
                     retrieveContactInfo.getString(3), 
                     retrieveContactInfo.getBoolean(4)
                     
-                );
+                ); 
             return contactInfo;
         }
         catch(Exception E) {
@@ -249,9 +136,67 @@ public class DatabaseEngine {
         return null;
     }    
     
+    
+    
+    public ArrayList<IndividualChat> synchronizeIndividualChats(ArrayList<IndividualChat> chatList) {
+        Contact contactInfo;
+        try {
+            CallableStatement retrieveContactInfo = connection.prepareCall("{call syncChat(?)}");
+            
+            //retrieveContactInfo.setString(1, chatList.get(i));
+        } catch (Exception E) {
+        }
+        
+        return null;
+    } 
+    
+    
+    /**
+     *  Adding or removing a contact from a user's contactList
+     *  
+     */
+    public boolean addContact (Person user, Person contact) {
+        
+        try {
+            CallableStatement addToContactList = connection.prepareCall("{call addToContactList(?, ?)}");
+            addToContactList.setString(1, user.getPhoneNumber());
+            addToContactList.setString(2, contact.getPhoneNumber());
+            
+            addToContactList.executeQuery();
+            
+            return true;
+
+        } catch(SQLException E) {
+         //   E.printStackTrace();
+        }
+        
+        return false;
+    }
+    
+    
+    /**
+     * Adding a new user to the database 
+     */
+    public boolean addUser (Person user) {
+         try {
+            CallableStatement addToUserList = connection.prepareCall("{call addToUserList(?, ?, ?)}");
+            addToUserList.setString(1, user.getPhoneNumber());
+            addToUserList.setString(2, user.getName());
+            addToUserList.setString(3, user.getStaus());
+            
+            addToUserList.executeQuery();
+            
+            return true;
+
+        } catch(SQLException E) {
+            //E.printStackTrace();
+        }
+        return false;
+    }   
+    
     /**
      * closes the databases
-     */   
+     */     
     public void close() {
        try 
        {

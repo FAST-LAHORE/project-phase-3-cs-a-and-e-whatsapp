@@ -13,8 +13,10 @@ import java.util.Date;
  * @author wj
  */
 public class Chat {
+    private int chatId;
     protected ArrayList<MessageDescription> chatConversation;
     public Chat(){
+        chatId = -1;
         this.chatConversation = new ArrayList<MessageDescription>();
     }
     //add message in chat by a given person
@@ -46,5 +48,19 @@ public class Chat {
         }
         
         return toReturn;
+    }
+    
+    // ChatID getter/setter
+    public void setChatId(int id) {
+        chatId = id;
+    }
+    public int getChatId(int id) {
+        // If chat id is already assigned 
+        if (chatId > 0) {
+            return chatId;
+        }
+        else {
+            return -1;
+        }
     }
 }
