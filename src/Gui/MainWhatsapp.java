@@ -17,24 +17,34 @@
 package Gui;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
+import whatsapp.*;
 /**
+ * 
  *
  * @author yamee
  */
 public class MainWhatsapp extends javax.swing.JFrame {
-    
+    public static DatabaseEngine myDB;
+    public static Person mySelf;
     private static MainWhatsapp obj;
     private static StartPage start_page;
     private static GridBagLayout layout = new GridBagLayout();
     private MainWhatsapp() 
     {
-    initComponents();
-        
+    initComponents();    
+    }
+    public DatabaseEngine getDB(){
+        return myDB;
+    }
+    public Person getmySelf(){
+        return mySelf;
     }
     public static MainWhatsapp getInstance() 
     { 
+        
         if(obj==null)
         {
+            myDB = new DatabaseEngine();
             obj=new MainWhatsapp();
             start_page=new StartPage();
             MainFramePanel.setLayout(layout);

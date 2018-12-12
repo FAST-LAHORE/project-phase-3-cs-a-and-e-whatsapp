@@ -16,6 +16,7 @@
  */
 package Gui;
 import Gui.MenuCalls.*;
+
 /**
  *
  * @author yamee
@@ -28,14 +29,13 @@ public class MainPage extends javax.swing.JPanel {
     private MainWhatsapp prtPg=MainWhatsapp.getInstance();
     
     public MainPage() {
-        initComponents();
+        initComponents();        
         settingspage = new SettingPage(this);
         newchat= new StartNewChat(this);
         prtPg.MainFramePanel.add(settingspage);
         prtPg.MainFramePanel.add(newchat);
         settingspage.setVisible(false);
         newchat.setVisible(false);
-
         //boolean isEnabled(int index)
     
     
@@ -70,6 +70,15 @@ public class MainPage extends javax.swing.JPanel {
         SearchBoxChats = new javax.swing.JTextField();
         MenuChats = new javax.swing.JButton();
         SearchChats = new javax.swing.JButton();
+        chat1 = new javax.swing.JPanel();
+        chat1Name = new java.awt.Label();
+        chat1Text = new java.awt.Label();
+        chat2 = new javax.swing.JPanel();
+        chat2Name = new java.awt.Label();
+        chat2Text = new java.awt.Label();
+        chat3 = new javax.swing.JPanel();
+        label7 = new java.awt.Label();
+        label8 = new java.awt.Label();
         StatusPanel = new javax.swing.JPanel();
         SearchBoxStatus = new javax.swing.JTextField();
         MyStatusLabel = new javax.swing.JLabel();
@@ -139,6 +148,10 @@ public class MainPage extends javax.swing.JPanel {
         WhatsAppDisplayMainPage.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         WhatsAppDisplayMainPage.setText("WhatsApp");
 
+        ChatsPanel.setBackground(new java.awt.Color(255, 255, 102));
+        ChatsPanel.setMinimumSize(new java.awt.Dimension(0, 350));
+        ChatsPanel.setPreferredSize(new java.awt.Dimension(500, 700));
+
         StartANewChat.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         StartANewChat.setText("Start A New Chat");
         StartANewChat.addActionListener(new java.awt.event.ActionListener() {
@@ -147,7 +160,7 @@ public class MainPage extends javax.swing.JPanel {
             }
         });
 
-        SearchBoxChats.setText("Search Calls");
+        SearchBoxChats.setText("Search Chats");
         SearchBoxChats.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 SearchBoxChatsActionPerformed(evt);
@@ -169,16 +182,95 @@ public class MainPage extends javax.swing.JPanel {
             }
         });
 
+        javax.swing.GroupLayout chat1Layout = new javax.swing.GroupLayout(chat1);
+        chat1.setLayout(chat1Layout);
+        chat1Layout.setHorizontalGroup(
+            chat1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(chat1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(chat1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(chat1Layout.createSequentialGroup()
+                        .addComponent(chat1Name, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(chat1Text, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
+        );
+        chat1Layout.setVerticalGroup(
+            chat1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, chat1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(chat1Name, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(chat1Text, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+
+        chat1Name.getAccessibleContext().setAccessibleName("cName1");
+
+        javax.swing.GroupLayout chat2Layout = new javax.swing.GroupLayout(chat2);
+        chat2.setLayout(chat2Layout);
+        chat2Layout.setHorizontalGroup(
+            chat2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(chat2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(chat2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(chat2Layout.createSequentialGroup()
+                        .addComponent(chat2Name, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(chat2Text, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
+        );
+        chat2Layout.setVerticalGroup(
+            chat2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, chat2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(chat2Name, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(chat2Text, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+
+        javax.swing.GroupLayout chat3Layout = new javax.swing.GroupLayout(chat3);
+        chat3.setLayout(chat3Layout);
+        chat3Layout.setHorizontalGroup(
+            chat3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(chat3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(chat3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(chat3Layout.createSequentialGroup()
+                        .addComponent(label7, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(label8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
+        );
+        chat3Layout.setVerticalGroup(
+            chat3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, chat3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(label7, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(label8, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+
         javax.swing.GroupLayout ChatsPanelLayout = new javax.swing.GroupLayout(ChatsPanel);
         ChatsPanel.setLayout(ChatsPanelLayout);
         ChatsPanelLayout.setHorizontalGroup(
             ChatsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(ChatsPanelLayout.createSequentialGroup()
-                .addContainerGap(311, Short.MAX_VALUE)
+                .addContainerGap()
                 .addGroup(ChatsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(StartANewChat, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ChatsPanelLayout.createSequentialGroup()
-                        .addComponent(SearchBoxChats, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 360, Short.MAX_VALUE)
+                        .addComponent(StartANewChat))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ChatsPanelLayout.createSequentialGroup()
+                        .addGroup(ChatsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(chat3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(chat2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, ChatsPanelLayout.createSequentialGroup()
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addComponent(SearchBoxChats, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(chat1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(ChatsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(MenuChats, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -187,14 +279,20 @@ public class MainPage extends javax.swing.JPanel {
         );
         ChatsPanelLayout.setVerticalGroup(
             ChatsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ChatsPanelLayout.createSequentialGroup()
+            .addGroup(ChatsPanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(ChatsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(SearchBoxChats, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(SearchChats))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(MenuChats)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 285, Short.MAX_VALUE)
+                .addGroup(ChatsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(MenuChats)
+                    .addComponent(chat1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(chat2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(chat3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 21, Short.MAX_VALUE)
                 .addComponent(StartANewChat)
                 .addContainerGap())
         );
@@ -266,7 +364,7 @@ public class MainPage extends javax.swing.JPanel {
                         .addComponent(AddStatus, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(RecentUpdates)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 144, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 107, Short.MAX_VALUE)
                         .addComponent(ViewedUpdates)
                         .addGap(111, 111, 111))
                     .addGroup(StatusPanelLayout.createSequentialGroup()
@@ -324,7 +422,7 @@ public class MainPage extends javax.swing.JPanel {
                     .addComponent(SearchCalls))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(MenuCalls)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 289, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 252, Short.MAX_VALUE)
                 .addComponent(MakeaCall)
                 .addContainerGap())
         );
@@ -339,7 +437,7 @@ public class MainPage extends javax.swing.JPanel {
                 .addContainerGap()
                 .addComponent(WhatsAppDisplayMainPage, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addComponent(MainPagePanel, javax.swing.GroupLayout.DEFAULT_SIZE, 514, Short.MAX_VALUE)
+            .addComponent(MainPagePanel)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -347,7 +445,7 @@ public class MainPage extends javax.swing.JPanel {
                 .addContainerGap()
                 .addComponent(WhatsAppDisplayMainPage, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(MainPagePanel)
+                .addComponent(MainPagePanel, javax.swing.GroupLayout.DEFAULT_SIZE, 378, Short.MAX_VALUE)
                 .addGap(18, 18, 18))
         );
     }// </editor-fold>//GEN-END:initComponents
@@ -442,5 +540,14 @@ public class MainPage extends javax.swing.JPanel {
     private javax.swing.JLabel ViewedUpdates;
     private javax.swing.JLabel WhatsAppDisplayMainPage;
     private javax.swing.JMenuItem WhatsAppWeb;
+    private javax.swing.JPanel chat1;
+    private java.awt.Label chat1Name;
+    private java.awt.Label chat1Text;
+    private javax.swing.JPanel chat2;
+    private java.awt.Label chat2Name;
+    private java.awt.Label chat2Text;
+    private javax.swing.JPanel chat3;
+    private java.awt.Label label7;
+    private java.awt.Label label8;
     // End of variables declaration//GEN-END:variables
 }

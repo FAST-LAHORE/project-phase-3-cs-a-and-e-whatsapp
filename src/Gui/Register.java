@@ -23,6 +23,8 @@ package Gui;
 public class Register extends javax.swing.JPanel {
 
     MainPage mymainpage;
+    String phoneNumberMyself;
+    
     private MainWhatsapp prtPg=MainWhatsapp.getInstance();
     /**
      * Creates new form Register

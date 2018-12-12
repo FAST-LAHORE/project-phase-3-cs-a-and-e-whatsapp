@@ -24,6 +24,7 @@ public class SettingProfile extends javax.swing.JPanel {
 
     
     Register registerme;
+    private String nameOfUser=null; 
     private MainWhatsapp prtPg=MainWhatsapp.getInstance();
     /**
      * Creates new form SettingProfile
@@ -103,12 +104,15 @@ public class SettingProfile extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+        nameOfUser=jTextField1.getText();
+        
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField1ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         registerme.setVisible(true);
-        setVisible(false);    
+        setVisible(false);
+        
 
 // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
