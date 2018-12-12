@@ -31,8 +31,8 @@ public class SettingProfile extends javax.swing.JPanel {
     public SettingProfile() {
         initComponents();
         registerme = new Register();
-        prtPg.MainFramePanel.add(registerme);
-        registerme.setVisible(false);
+        //prtPg.MainFramePanel.add(registerme);
+        //registerme.setVisible(false);
     
     
     

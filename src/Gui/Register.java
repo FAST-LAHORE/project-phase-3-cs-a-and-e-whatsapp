@@ -30,8 +30,8 @@ public class Register extends javax.swing.JPanel {
     public Register() {
         initComponents();
         mymainpage = new MainPage();
-        prtPg.MainFramePanel.add(mymainpage);
-        mymainpage.setVisible(false);
+        //prtPg.MainFramePanel.add(mymainpage);
+        //mymainpage.setVisible(false);
     
     }
 

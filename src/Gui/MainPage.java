@@ -28,9 +28,9 @@ public class MainPage extends javax.swing.JPanel {
     
     public MainPage() {
         initComponents();
-        settingspage = new SettingPage();
-        prtPg.MainFramePanel.add(settingspage);
-        settingspage.setVisible(false);
+        //settingspage = new SettingPage();
+        //prtPg.MainFramePanel.add(settingspage);
+        //settingspage.setVisible(false);
     }
 
     /**

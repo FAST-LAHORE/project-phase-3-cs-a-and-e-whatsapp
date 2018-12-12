@@ -23,11 +23,10 @@ import java.awt.GridBagLayout;
  */
 public class MainWhatsapp extends javax.swing.JFrame {
     
-    private static MainWhatsapp obj=null;
+    private static MainWhatsapp obj;
     StartPage start_page;
-    
     GridBagLayout layout = new GridBagLayout();
-    public MainWhatsapp() {
+    private MainWhatsapp() {
         initComponents();
         start_page=new StartPage();
         MainFramePanel.setLayout(layout);
@@ -40,8 +39,8 @@ public class MainWhatsapp extends javax.swing.JFrame {
     }
     public static MainWhatsapp getInstance() 
     { 
-        if (obj==null) 
-            obj = new MainWhatsapp(); 
+        if(obj==null)
+            obj=new MainWhatsapp();
         return obj;
     }
     
@@ -124,7 +123,7 @@ public class MainWhatsapp extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 
-                new MainWhatsapp().setVisible(true);
+                MainWhatsapp.getInstance().setVisible(true);
             }
         });
     }
