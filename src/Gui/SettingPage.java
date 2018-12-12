@@ -22,11 +22,17 @@ package Gui;
  */
 public class SettingPage extends javax.swing.JPanel {
 
+    private MainWhatsapp prtPg=MainWhatsapp.getInstance();
+    MainPage b;
+    
     /**
      * Creates new form SettingPage
      */
-    public SettingPage() {
+    public SettingPage(MainPage a) {
         initComponents();
+        b=a;
+        b.setVisible(false);
+    
     }
 
     /**
@@ -50,6 +56,11 @@ public class SettingPage extends javax.swing.JPanel {
         jButton2 = new javax.swing.JButton();
 
         jButton7.setText("Back");
+        jButton7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton7ActionPerformed(evt);
+            }
+        });
 
         jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 22)); // NOI18N
         jLabel1.setText("Settings");
@@ -127,6 +138,13 @@ public class SettingPage extends javax.swing.JPanel {
                 .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+         b.setVisible(true);  
+         setVisible(false);
+        
+// TODO add your handling code here:
+    }//GEN-LAST:event_jButton7ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

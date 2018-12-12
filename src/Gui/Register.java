@@ -30,8 +30,8 @@ public class Register extends javax.swing.JPanel {
     public Register() {
         initComponents();
         mymainpage = new MainPage();
-        //prtPg.MainFramePanel.add(mymainpage);
-        //mymainpage.setVisible(false);
+        prtPg.MainFramePanel.add(mymainpage);
+        mymainpage.setVisible(false);
     
     }
 
@@ -52,6 +52,8 @@ public class Register extends javax.swing.JPanel {
         jLabel1 = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
         jTextField2 = new javax.swing.JTextField();
+
+        setBackground(new java.awt.Color(0, 204, 0));
 
         jLabel2.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jLabel2.setText("Country");

@@ -21,13 +21,13 @@ package Gui;
  */
 public class StartPage extends javax.swing.JPanel {
     SettingProfile myprofile;
-    private MainWhatsapp prtPg = MainWhatsapp.getInstance();
+   private MainWhatsapp prtPg = MainWhatsapp.getInstance();
     
     public StartPage() {
         initComponents();
-      //  myprofile = new SettingProfile();
-       // prtPg.MainFramePanel.add(myprofile);
-        //myprofile.setVisible(false);
+        myprofile = new SettingProfile();
+        prtPg.MainFramePanel.add(myprofile);
+        myprofile.setVisible(false);
         
     
     }

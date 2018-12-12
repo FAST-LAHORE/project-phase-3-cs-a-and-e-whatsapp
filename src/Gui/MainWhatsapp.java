@@ -24,23 +24,26 @@ import java.awt.GridBagLayout;
 public class MainWhatsapp extends javax.swing.JFrame {
     
     private static MainWhatsapp obj;
-    StartPage start_page;
-    GridBagLayout layout = new GridBagLayout();
-    private MainWhatsapp() {
-        initComponents();
-        start_page=new StartPage();
-        MainFramePanel.setLayout(layout);
-        GridBagConstraints c = new GridBagConstraints();
-        c.gridx = 0;
-        c.gridy = 0;
-        MainFramePanel.add(start_page,c);
-        start_page.setVisible(true);
-       
+    private static StartPage start_page;
+    private static GridBagLayout layout = new GridBagLayout();
+    private MainWhatsapp() 
+    {
+    initComponents();
+        
     }
     public static MainWhatsapp getInstance() 
     { 
         if(obj==null)
+        {
             obj=new MainWhatsapp();
+            start_page=new StartPage();
+            MainFramePanel.setLayout(layout);
+            GridBagConstraints c = new GridBagConstraints();
+            c.gridx = 0;
+            c.gridy = 0;
+            MainFramePanel.add(start_page,c);
+            start_page.setVisible(true);
+        }
         return obj;
     }
     
@@ -129,6 +132,6 @@ public class MainWhatsapp extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    public javax.swing.JPanel MainFramePanel;
+    public static javax.swing.JPanel MainFramePanel;
     // End of variables declaration//GEN-END:variables
 }

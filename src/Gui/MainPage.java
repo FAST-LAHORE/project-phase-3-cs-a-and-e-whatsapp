@@ -28,9 +28,12 @@ public class MainPage extends javax.swing.JPanel {
     
     public MainPage() {
         initComponents();
-        //settingspage = new SettingPage();
-        //prtPg.MainFramePanel.add(settingspage);
-        //settingspage.setVisible(false);
+        settingspage = new SettingPage(this);
+        prtPg.MainFramePanel.add(settingspage);
+        settingspage.setVisible(false);
+        //boolean isEnabled(int index)
+    
+    
     }
 
     /**
@@ -43,205 +46,280 @@ public class MainPage extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
-        jTabbedPane1 = new javax.swing.JTabbedPane();
-        jPanel1 = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
-        jTextField1 = new javax.swing.JTextField();
-        jButton4 = new javax.swing.JButton();
-        jButton8 = new javax.swing.JButton();
-        jButton10 = new javax.swing.JButton();
-        jPanel2 = new javax.swing.JPanel();
-        jTextField2 = new javax.swing.JTextField();
-        jLabel2 = new javax.swing.JLabel();
-        jButton2 = new javax.swing.JButton();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jButton9 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
-        jPanel3 = new javax.swing.JPanel();
-        jTextField3 = new javax.swing.JTextField();
-        jButton3 = new javax.swing.JButton();
-        jLabel5 = new javax.swing.JLabel();
-        jButton5 = new javax.swing.JButton();
-        jButton7 = new javax.swing.JButton();
+        MenuForChats = new javax.swing.JPopupMenu();
+        NewGroup = new javax.swing.JMenuItem();
+        NewBroadCast = new javax.swing.JMenuItem();
+        WhatsAppWeb = new javax.swing.JMenuItem();
+        StarredMessages = new javax.swing.JMenuItem();
+        SettingsChats = new javax.swing.JMenuItem();
+        MenuForStatus = new javax.swing.JPopupMenu();
+        StatusPrivacy = new javax.swing.JMenuItem();
+        SettingsStatus = new javax.swing.JMenuItem();
+        MenuForCalls = new javax.swing.JPopupMenu();
+        ClearCallLog = new javax.swing.JMenuItem();
+        SettingsCalls = new javax.swing.JMenuItem();
+        WhatsAppDisplayMainPage = new javax.swing.JLabel();
+        MainPagePanel = new javax.swing.JTabbedPane();
+        ChatsPanel = new javax.swing.JPanel();
+        StartANewChat = new javax.swing.JButton();
+        SearchBoxChats = new javax.swing.JTextField();
+        MenuChats = new javax.swing.JButton();
+        SearchChats = new javax.swing.JButton();
+        StatusPanel = new javax.swing.JPanel();
+        SearchBoxStatus = new javax.swing.JTextField();
+        MyStatusLabel = new javax.swing.JLabel();
+        AddStatus = new javax.swing.JButton();
+        RecentUpdates = new javax.swing.JLabel();
+        ViewedUpdates = new javax.swing.JLabel();
+        SearchStatus = new javax.swing.JButton();
+        MenuStatus = new javax.swing.JButton();
+        CallsPanel = new javax.swing.JPanel();
+        SearchBoxCalls = new javax.swing.JTextField();
+        MakeaCall = new javax.swing.JButton();
+        CallLogLabel = new javax.swing.JLabel();
+        MenuCalls = new javax.swing.JButton();
+        SearchCalls = new javax.swing.JButton();
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel1.setText("WhatsApp");
-
-        jButton1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jButton1.setText("Start A New Chat");
-
-        jTextField1.setText("Search Calls");
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        NewGroup.setText("New Group");
+        NewGroup.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                NewGroupActionPerformed(evt);
+            }
+        });
+        MenuForChats.add(NewGroup);
+
+        NewBroadCast.setText("New BroadCast");
+        MenuForChats.add(NewBroadCast);
+
+        WhatsAppWeb.setText("WhatsAppWeb");
+        MenuForChats.add(WhatsAppWeb);
+
+        StarredMessages.setText("Starred Messages");
+        MenuForChats.add(StarredMessages);
+
+        SettingsChats.setText("Settings");
+        SettingsChats.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SettingsChatsActionPerformed(evt);
+            }
+        });
+        MenuForChats.add(SettingsChats);
+
+        MenuForStatus.setComponentPopupMenu(MenuForStatus);
+
+        StatusPrivacy.setText("Status Privacy");
+        MenuForStatus.add(StatusPrivacy);
+
+        SettingsStatus.setText("Settings");
+        SettingsStatus.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SettingsStatusActionPerformed(evt);
+            }
+        });
+        MenuForStatus.add(SettingsStatus);
+
+        ClearCallLog.setText("Clear Call Log");
+        MenuForCalls.add(ClearCallLog);
+
+        SettingsCalls.setText("Settings");
+        SettingsCalls.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SettingsCallsActionPerformed(evt);
+            }
+        });
+        MenuForCalls.add(SettingsCalls);
+
+        setBackground(new java.awt.Color(0, 204, 0));
+
+        WhatsAppDisplayMainPage.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        WhatsAppDisplayMainPage.setText("WhatsApp");
+
+        StartANewChat.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        StartANewChat.setText("Start A New Chat");
+
+        SearchBoxChats.setText("Search Calls");
+        SearchBoxChats.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SearchBoxChatsActionPerformed(evt);
             }
         });
 
-        jButton4.setText("Menu");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
+        MenuChats.setText("Menu");
+        MenuChats.setComponentPopupMenu(MenuForChats);
+        MenuChats.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+                MenuChatsActionPerformed(evt);
             }
         });
 
-        jButton8.setText("Search");
+        SearchChats.setText("Search");
+        SearchChats.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SearchChatsActionPerformed(evt);
+            }
+        });
 
-        jButton10.setText("jButton10");
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+        javax.swing.GroupLayout ChatsPanelLayout = new javax.swing.GroupLayout(ChatsPanel);
+        ChatsPanel.setLayout(ChatsPanelLayout);
+        ChatsPanelLayout.setHorizontalGroup(
+            ChatsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(ChatsPanelLayout.createSequentialGroup()
                 .addContainerGap(311, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(ChatsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(StartANewChat, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ChatsPanelLayout.createSequentialGroup()
+                        .addComponent(SearchBoxChats, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton8))
-                    .addComponent(jButton1, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jButton4, javax.swing.GroupLayout.Alignment.TRAILING))
+                        .addGroup(ChatsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(MenuChats, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(SearchChats, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addContainerGap())
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(18, 18, 18)
-                .addComponent(jButton10, javax.swing.GroupLayout.PREFERRED_SIZE, 244, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+        ChatsPanelLayout.setVerticalGroup(
+            ChatsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ChatsPanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton8))
+                .addGroup(ChatsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(SearchBoxChats, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(SearchChats))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton4)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton10)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 202, Short.MAX_VALUE)
-                .addComponent(jButton1)
+                .addComponent(MenuChats)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 231, Short.MAX_VALUE)
+                .addComponent(StartANewChat)
                 .addContainerGap())
         );
 
-        jTabbedPane1.addTab("Chats", jPanel1);
+        MainPagePanel.addTab("Chats", ChatsPanel);
 
-        jTextField2.setText("Search Status");
-        jTextField2.addActionListener(new java.awt.event.ActionListener() {
+        SearchBoxStatus.setText("Search Status");
+        SearchBoxStatus.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField2ActionPerformed(evt);
+                SearchBoxStatusActionPerformed(evt);
             }
         });
 
-        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jLabel2.setText("MY STATUS");
+        MyStatusLabel.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        MyStatusLabel.setText("MY STATUS");
 
-        jButton2.setText("Tap to Add Status Update");
+        AddStatus.setText("Tap to Add Status Update");
 
-        jLabel3.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jLabel3.setText("Recent Updates");
+        RecentUpdates.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        RecentUpdates.setText("Recent Updates");
 
-        jLabel4.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jLabel4.setText("Viewed Updates");
+        ViewedUpdates.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        ViewedUpdates.setText("Viewed Updates");
 
-        jButton9.setText("Search");
+        SearchStatus.setText("Search");
 
-        jButton6.setText("Menu");
+        MenuStatus.setText("Menu");
+        MenuStatus.setComponentPopupMenu(MenuForStatus);
+        MenuStatus.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MenuStatusActionPerformed(evt);
+            }
+        });
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
+        javax.swing.GroupLayout StatusPanelLayout = new javax.swing.GroupLayout(StatusPanel);
+        StatusPanel.setLayout(StatusPanelLayout);
+        StatusPanelLayout.setHorizontalGroup(
+            StatusPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(StatusPanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 324, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(StatusPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(StatusPanelLayout.createSequentialGroup()
+                        .addComponent(ViewedUpdates)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(StatusPanelLayout.createSequentialGroup()
+                        .addGroup(StatusPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(AddStatus, javax.swing.GroupLayout.PREFERRED_SIZE, 324, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(RecentUpdates, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(MyStatusLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jButton9, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jButton6, javax.swing.GroupLayout.Alignment.TRAILING)))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jLabel4)
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap())
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton9))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton6))
-                .addGap(18, 18, 18)
-                .addComponent(jLabel3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel4)
-                .addGap(111, 111, 111))
-        );
-
-        jTabbedPane1.addTab("Status", jPanel2);
-
-        jTextField3.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jTextField3.setText("Search Calls");
-
-        jButton3.setText("Make a Call");
-
-        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel5.setText("Call Log");
-
-        jButton5.setText("Menu");
-
-        jButton7.setText("Search");
-
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                        .addComponent(jLabel5)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 285, Short.MAX_VALUE)
-                        .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(SearchBoxStatus, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton7))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButton3, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jButton5, javax.swing.GroupLayout.Alignment.TRAILING))))
+                        .addGroup(StatusPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(SearchStatus, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(MenuStatus, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addContainerGap())
         );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
+        StatusPanelLayout.setVerticalGroup(
+            StatusPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(StatusPanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton7))
+                .addGroup(StatusPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(SearchBoxStatus, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(MyStatusLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(SearchStatus))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton5)
+                .addGroup(StatusPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(StatusPanelLayout.createSequentialGroup()
+                        .addComponent(AddStatus, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(RecentUpdates)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 90, Short.MAX_VALUE)
+                        .addComponent(ViewedUpdates)
+                        .addGap(111, 111, 111))
+                    .addGroup(StatusPanelLayout.createSequentialGroup()
+                        .addComponent(MenuStatus)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+        );
+
+        MainPagePanel.addTab("Status", StatusPanel);
+
+        SearchBoxCalls.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        SearchBoxCalls.setText("Search Calls");
+
+        MakeaCall.setText("Make a Call");
+
+        CallLogLabel.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        CallLogLabel.setText("Call Log");
+
+        MenuCalls.setText("Menu");
+        MenuCalls.setComponentPopupMenu(MenuForCalls);
+        MenuCalls.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MenuCallsActionPerformed(evt);
+            }
+        });
+
+        SearchCalls.setText("Search");
+
+        javax.swing.GroupLayout CallsPanelLayout = new javax.swing.GroupLayout(CallsPanel);
+        CallsPanel.setLayout(CallsPanelLayout);
+        CallsPanelLayout.setHorizontalGroup(
+            CallsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(CallsPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(CallsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(CallsPanelLayout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(MakeaCall))
+                    .addGroup(CallsPanelLayout.createSequentialGroup()
+                        .addComponent(CallLogLabel)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 285, Short.MAX_VALUE)
+                        .addComponent(SearchBoxCalls, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(CallsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(MenuCalls, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(SearchCalls, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                .addContainerGap())
+        );
+        CallsPanelLayout.setVerticalGroup(
+            CallsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(CallsPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(CallsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(SearchBoxCalls, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(CallLogLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(SearchCalls))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(MenuCalls)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 235, Short.MAX_VALUE)
-                .addComponent(jButton3)
+                .addComponent(MakeaCall)
                 .addContainerGap())
         );
 
-        jTabbedPane1.addTab("Calls", jPanel3);
+        MainPagePanel.addTab("Calls", CallsPanel);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -249,58 +327,104 @@ public class MainPage extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(WhatsAppDisplayMainPage, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addComponent(jTabbedPane1)
+            .addComponent(MainPagePanel)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(WhatsAppDisplayMainPage, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jTabbedPane1)
+                .addComponent(MainPagePanel)
                 .addGap(18, 18, 18))
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    private void SearchBoxChatsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SearchBoxChatsActionPerformed
+        
+            // TODO add your handling code here:
+    }//GEN-LAST:event_SearchBoxChatsActionPerformed
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        settingspage.setVisible(true);
+    private void MenuChatsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuChatsActionPerformed
+        
+            // TODO add your handling code here:
+    }//GEN-LAST:event_MenuChatsActionPerformed
+
+    private void SearchBoxStatusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SearchBoxStatusActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_SearchBoxStatusActionPerformed
+
+    private void MenuStatusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuStatusActionPerformed
+        
+        // TODO add your handling code here:
+    }//GEN-LAST:event_MenuStatusActionPerformed
+
+    private void SearchChatsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SearchChatsActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_SearchChatsActionPerformed
+
+    private void SettingsChatsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SettingsChatsActionPerformed
+        settingspage.setVisible(true);    
         setVisible(false);
             // TODO add your handling code here:
-    }//GEN-LAST:event_jButton4ActionPerformed
+    }//GEN-LAST:event_SettingsChatsActionPerformed
 
-    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
+    private void MenuCallsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuCallsActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField2ActionPerformed
+    }//GEN-LAST:event_MenuCallsActionPerformed
+
+    private void NewGroupActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NewGroupActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_NewGroupActionPerformed
+
+    private void SettingsStatusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SettingsStatusActionPerformed
+        settingspage.setVisible(true);    
+        setVisible(false);        
+// TODO add your handling code here:
+    }//GEN-LAST:event_SettingsStatusActionPerformed
+
+    private void SettingsCallsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SettingsCallsActionPerformed
+        settingspage.setVisible(true);    
+        setVisible(false);        
+// TODO add your handling code here:
+    }//GEN-LAST:event_SettingsCallsActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton10;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
-    private javax.swing.JButton jButton8;
-    private javax.swing.JButton jButton9;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
-    private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
+    private javax.swing.JButton AddStatus;
+    private javax.swing.JLabel CallLogLabel;
+    private javax.swing.JPanel CallsPanel;
+    private javax.swing.JPanel ChatsPanel;
+    private javax.swing.JMenuItem ClearCallLog;
+    private javax.swing.JTabbedPane MainPagePanel;
+    private javax.swing.JButton MakeaCall;
+    private javax.swing.JButton MenuCalls;
+    private javax.swing.JButton MenuChats;
+    private javax.swing.JPopupMenu MenuForCalls;
+    private javax.swing.JPopupMenu MenuForChats;
+    private javax.swing.JPopupMenu MenuForStatus;
+    private javax.swing.JButton MenuStatus;
+    private javax.swing.JLabel MyStatusLabel;
+    private javax.swing.JMenuItem NewBroadCast;
+    private javax.swing.JMenuItem NewGroup;
+    private javax.swing.JLabel RecentUpdates;
+    private javax.swing.JTextField SearchBoxCalls;
+    private javax.swing.JTextField SearchBoxChats;
+    private javax.swing.JTextField SearchBoxStatus;
+    private javax.swing.JButton SearchCalls;
+    private javax.swing.JButton SearchChats;
+    private javax.swing.JButton SearchStatus;
+    private javax.swing.JMenuItem SettingsCalls;
+    private javax.swing.JMenuItem SettingsChats;
+    private javax.swing.JMenuItem SettingsStatus;
+    private javax.swing.JMenuItem StarredMessages;
+    private javax.swing.JButton StartANewChat;
+    private javax.swing.JPanel StatusPanel;
+    private javax.swing.JMenuItem StatusPrivacy;
+    private javax.swing.JLabel ViewedUpdates;
+    private javax.swing.JLabel WhatsAppDisplayMainPage;
+    private javax.swing.JMenuItem WhatsAppWeb;
     // End of variables declaration//GEN-END:variables
 }
